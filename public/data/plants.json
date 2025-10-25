@@ -1,0 +1,74 @@
+[
+  {
+    "plantId": 1,
+    "plantName": "Snake Plant",
+    "category": "Air Purifier",
+    "price": 18,
+    "rating": 4.8,
+    "availableStock": 10,
+    "careLevel": "Easy",
+    "description": "A hardy plant that purifies indoor air and thrives in low light.",
+  "image": "https://i.ibb.co.com/sJ3ZnwwC/1.jpg",
+    "providerName": "UrbanGreen Studio"
+  },
+  {
+    "plantId": 2,
+    "plantName": "Fiddle Leaf Fig",
+    "category": "Decor",
+    "price": 55,
+    "rating": 4.6,
+    "availableStock": 5,
+    "careLevel": "Medium",
+    "description": "Popular statement plant with large, violin-shaped leaves. Prefers bright indirect light.",
+  "image": "https://i.ibb.co.com/ZqLRgyP/2.jpg",
+    "providerName": "Leaf & Lore"
+  },
+  {
+    "plantId": 3,
+    "plantName": "Pothos",
+    "category": "Trailing",
+    "price": 14,
+    "rating": 4.7,
+    "availableStock": 20,
+    "careLevel": "Easy",
+    "description": "A resilient trailing plant perfect for shelves and hanging baskets.",
+  "image": "https://i.ibb.co.com/BHp4rpVY/3.jpg",
+    "providerName": "GreenThumb Co."
+  },
+  {
+    "plantId": 4,
+    "plantName": "ZZ Plant",
+    "category": "Low Light",
+    "price": 30,
+    "rating": 4.9,
+    "availableStock": 8,
+    "careLevel": "Very Easy",
+    "description": "Extremely tolerant and low-maintenance — ideal for beginners and offices.",
+  "image": "https://i.ibb.co.com/Kx9FR4mp/4.jpg",
+    "providerName": "OfficeGreens"
+  },
+  {
+    "plantId": 5,
+    "plantName": "Peace Lily",
+    "category": "Flowering",
+    "price": 22,
+    "rating": 4.5,
+    "availableStock": 12,
+    "careLevel": "Medium",
+    "description": "Known for its white blooms and air-cleaning abilities; keep soil lightly moist.",
+  "image": "https://i.ibb.co.com/tp6wsb4d/5.jpg",
+    "providerName": "Bloom & Root"
+  },
+  {
+    "plantId": 6,
+    "plantName": "Monstera Deliciosa",
+    "category": "Tropical",
+    "price": 48,
+    "rating": 4.7,
+    "availableStock": 6,
+    "careLevel": "Medium",
+    "description": "Iconic split-leaf plant that loves bright, indirect light and humidity.",
+  "image": "https://i.ibb.co.com/FLnkW6Vb/6.jpg",
+    "providerName": "TropicHouse"
+  }
+]

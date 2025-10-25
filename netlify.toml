@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Ensure React Router client-side routes work on reload
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

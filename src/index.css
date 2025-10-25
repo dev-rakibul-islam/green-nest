@@ -1,0 +1,66 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@keyframes shine {
+  0% {
+    transform: translateX(-120%) rotate(8deg);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(140%) rotate(8deg);
+    opacity: 0;
+  }
+}
+
+.shine {
+  pointer-events: none;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 35%,
+    rgba(255, 255, 255, 0.35) 50%,
+    rgba(255, 255, 255, 0) 65%
+  );
+  filter: blur(0.5px);
+  border-radius: 1rem;
+  opacity: 0;
+}
+
+.group:hover .shine {
+  animation: shine 1000ms ease-in-out forwards;
+}
+
+@supports not (
+  (-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))
+) {
+  .backdrop-blur-xl {
+    background-color: rgba(17, 24, 39, 0.6);
+  }
+}
+
+body {
+  font-family: "Merienda", serif;
+}
+
+/* Mobile hardening: prevent horizontal scroll on small devices */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Ensure media scales within container */
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Utility: small safe top padding for iOS notch within sticky bars */
+.safe-top {
+  padding-top: env(safe-area-inset-top, 0px);
+}
