@@ -45,25 +45,6 @@ GreenNest is a React SPA focused on plant discovery and care guidance with a lig
 - Code-splitting/lazy-loading for faster initial load
 - Netlify and Vercel configuration included for zero-config deploys
 
-## Folder structure (high-level)
-
-```
-src/
-	assets/                  # Static assets (if any)
-	components/              # Reusable UI components (Hero, NavBar, etc.)
-	context/                 # Auth context/provider/hooks
-	firebase/                # Firebase config + init
-	hooks/                   # Custom hooks (e.g., usePlants)
-	layout/                  # Layout wrappers
-	pages/                   # Route components
-	routes/                  # Router definition
-	index.css                # Global styles (Tailwind)
-	main.jsx                 # App entry
-public/
-	data/plants.json         # Demo data
-	images/                  # Public images
-```
-
 ## Getting started
 
 Prerequisites:
