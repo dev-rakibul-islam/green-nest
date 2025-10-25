@@ -1,4 +1,3 @@
-import React from "react";
 import LazyImage from "./LazyImage";
 import { Droplets, Leaf, Sun } from "lucide-react";
 const experts = [
