@@ -153,7 +153,10 @@ const NavBar = () => {
               <Menu className="h-6 w-6" />
             )}
           </button>
-          <Link className="bg-transparent shadow-none border-0" to="/">
+          <Link
+            className="bg-white shadow-inner px-3 rounded-full border-0"
+            to="/"
+          >
             <LazyImage
               className="w-28 h-9 md:w-40 md:h-12 object-contain"
               src={logo}
