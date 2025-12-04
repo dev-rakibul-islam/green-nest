@@ -192,7 +192,7 @@ const Profile = () => {
                 <div className="md:col-span-2 flex justify-end">
                   <button
                     disabled={!isModified || submitting}
-                    className="btn btn-primary inline-flex items-center gap-2"
+                    className="btn bg-[#007C56] text-white inline-flex items-center gap-2"
                   >
                     <Save className="size-4" />{" "}
                     {submitting ? "Saving..." : "Update Profile"}

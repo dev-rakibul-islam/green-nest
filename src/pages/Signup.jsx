@@ -190,7 +190,7 @@ const Signup = () => {
 
           <button
             type="submit"
-            className="btn btn-primary w-full inline-flex items-center justify-center gap-2"
+            className="btn bg-[#007C56] text-white w-full inline-flex items-center justify-center gap-2"
           >
             <UserPlus className="size-4" /> Register
           </button>
@@ -207,7 +207,10 @@ const Signup = () => {
 
         <p className="text-sm mt-4 text-center">
           Already have an account?{" "}
-          <Link to="/login" className="link">
+          <Link
+            to="/login"
+            className="link text-[#007C56] hover:text-[#007C56]/80"
+          >
             Login
           </Link>
         </p>

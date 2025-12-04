@@ -23,7 +23,7 @@ const Footer = () => {
             </p>
             <div className="mt-5 flex items-center justify-center gap-4">
               <a
-                href="#"
+                href="https://www.facebook.com/greennestclub"
                 target="_blank"
                 rel="noreferrer noopener"
                 aria-label="Facebook"
@@ -32,7 +32,7 @@ const Footer = () => {
                 <Facebook size={24} strokeWidth={1} color="#1877F2" />
               </a>
               <a
-                href="#"
+                href="https://twitter.com/greennestapp"
                 target="_blank"
                 rel="noreferrer noopener"
                 aria-label="Twitter"
@@ -41,7 +41,7 @@ const Footer = () => {
                 <Twitter size={24} strokeWidth={1} color="#1DA1F2" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/greennest.studio"
                 target="_blank"
                 rel="noreferrer noopener"
                 aria-label="Instagram"
@@ -50,7 +50,7 @@ const Footer = () => {
                 <Instagram size={24} strokeWidth={1} color="#E1306C" />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/company/greennest"
                 target="_blank"
                 rel="noreferrer noopener"
                 aria-label="LinkedIn"
@@ -59,7 +59,7 @@ const Footer = () => {
                 <Linkedin size={24} strokeWidth={1} color="#0077B5" />
               </a>
               <a
-                href="#"
+                href="https://www.youtube.com/@greennestgarden"
                 target="_blank"
                 rel="noreferrer noopener"
                 aria-label="YouTube"
@@ -85,7 +85,7 @@ const Footer = () => {
                   className="text-slate-600 hover:text-slate-900"
                   to="/plants"
                 >
-                  Plants
+                  All Items
                 </Link>
               </li>
               <li>
@@ -112,6 +112,14 @@ const Footer = () => {
                   Privacy Policy
                 </Link>
               </li>
+              <li>
+                <Link
+                  className="text-slate-600 hover:text-slate-900"
+                  to="/support"
+                >
+                  Support
+                </Link>
+              </li>
             </ul>
           </nav>
 
@@ -127,18 +135,18 @@ const Footer = () => {
               </li>
               <li>
                 phone:{" "}
-                <Link className="hover:text-slate-900" to="tel:+1234567890">
+                <a className="hover:text-slate-900" href="tel:+1234567890">
                   +1 (234) 567-890
-                </Link>
+                </a>
               </li>
               <li>
                 email:{" "}
-                <Link
+                <a
                   className="hover:text-slate-900"
-                  to="mailto:info@greennest.com"
+                  href="mailto:info@greennest.com"
                 >
                   info@greennest.com
-                </Link>
+                </a>
               </li>
               <li>address: 123 Green St, Plant City, PC 12345</li>
               <li>hours: Mon-Fri 9am - 6pm</li>
@@ -148,7 +156,7 @@ const Footer = () => {
 
         <div className="mt-10 border-t border-green-100 border-dashed pt-6 text-center">
           <p className="text-xs text-slate-500">
-            © {year} GreenNest. All rights reserved.
+            &copy; {year} GreenNest. All rights reserved.
           </p>
         </div>
       </div>

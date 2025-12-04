@@ -16,7 +16,6 @@ const PlantOfTheWeek = () => {
   if (!featured) return null;
 
   const rating = Math.max(0, Math.min(5, Math.round(featured.rating || 0)));
-
   const formatTag = (s) => (s || "").trim().replace(/\s+/g, "-");
 
   const Star = ({ filled = false }) => (
@@ -33,51 +32,51 @@ const PlantOfTheWeek = () => {
   );
 
   return (
-    <section className="relative mb-5 overflow-hidden ">
-      <div className="relative grid items-center gap-8 p-6 md:grid-cols-2 md:p-10">
+    <section className="relative mb-5 overflow-hidden">
+      <div className="relative grid items-center gap-8 md:grid-cols-2">
         <div className="order-2 md:order-1">
-          <div className="relative w-full overflow-hidden rounded-2xl shadow-md ring-1 ring-emerald-500/10 bg-white/70 backdrop-blur-sm dark:bg-white/5 aspect-square sm:aspect-4/3 md:aspect-5/4">
+          <div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-white/70 shadow-md ring-1 ring-emerald-500/10 backdrop-blur-sm dark:bg-white/5 sm:aspect-4/3 md:aspect-5/4">
             <LazyImage
               src={featured.image}
               alt={featured.plantName}
-              className="block h-auto w-full object-contain select-none transition-transform duration-500 hover:scale-[1.02]"
+              className="block h-auto w-full select-none object-contain transition-transform duration-500 hover:scale-[1.02]"
               fallback="/images/plant-placeholder.svg"
             />
             <div className="pointer-events-none absolute inset-0 bg-linear-to-tr from-white/10 via-transparent to-transparent" />
           </div>
         </div>
-        <div className="order-1 md:order-2 space-y-5">
+        <div className="order-1 space-y-5 md:order-2">
           <div className="flex flex-wrap items-center gap-3">
-            <span className="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-medium tracking-wide shadow-sm">
-              🌿 Plant of the Week
+            <span className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-medium tracking-wide text-emerald-700 shadow-sm">
+              Plant of the Week
             </span>
             {featured.isNew && (
-              <span className="px-3 py-1 rounded-full bg-amber-100 text-amber-700 text-xs font-medium tracking-wide shadow-sm animate-pulse">
-                ✨ New Arrival
+              <span className="rounded-full bg-amber-100 px-3 py-1 text-xs font-medium tracking-wide text-amber-700 shadow-sm">
+                New Arrival
               </span>
             )}
           </div>
 
-          <h3 className="text-4xl md:text-5xl font-extrabold leading-snug text-gray-900 dark:text-white drop-shadow-sm">
+          <h3 className="text-4xl font-extrabold leading-snug text-gray-900 drop-shadow-sm dark:text-white md:text-5xl">
             {featured.plantName}
           </h3>
           <div className="flex flex-wrap items-center gap-3 text-sm">
             {featured.category && (
-              <span className="px-2 py-1 rounded-md bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300 font-medium">
+              <span className="rounded-md bg-emerald-50 px-2 py-1 font-medium text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300">
                 {formatTag(featured.category)}
               </span>
             )}
             {featured.careLevel && (
-              <span className="px-2 py-1 rounded-md bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300 font-medium">
+              <span className="rounded-md bg-gray-100 px-2 py-1 font-medium text-gray-700 dark:bg-gray-800 dark:text-gray-300">
                 {formatTag(featured.careLevel)}
               </span>
             )}
-            <div className="flex items-center gap-1 ml-2">
+            <div className="ml-2 flex items-center gap-1">
               {Array.from({ length: 5 }).map((_, i) => (
                 <Star
                   key={i}
                   filled={i < rating}
-                  className={`w-4 h-4 ${
+                  className={`h-4 w-4 ${
                     i < rating
                       ? "text-yellow-400"
                       : "text-gray-300 dark:text-gray-600"
@@ -85,7 +84,7 @@ const PlantOfTheWeek = () => {
                 />
               ))}
               {featured.rating && (
-                <span className="ml-1 text-xs text-gray-600 dark:text-gray-400 font-semibold">
+                <span className="ml-1 text-xs font-semibold text-gray-600 dark:text-gray-400">
                   {featured.rating.toFixed
                     ? featured.rating.toFixed(1)
                     : featured.rating}
@@ -96,17 +95,17 @@ const PlantOfTheWeek = () => {
           </div>
 
           {featured.description && (
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed max-w-lg">
+            <p className="max-w-lg leading-relaxed text-gray-700 dark:text-gray-300">
               {featured.description}
             </p>
           )}
           <div className="flex flex-col items-start gap-5 pt-3">
-            <span className="text-3xl font-extrabold text-emerald-700 dark:text-emerald-300 tracking-tight">
+            <span className="text-3xl font-extrabold tracking-tight text-emerald-700 dark:text-emerald-300">
               ${featured.price}
             </span>
             <Link
               to={`/plants/${featured.plantId}`}
-              className="px-6 py-2.5 text-white bg-emerald-600 hover:bg-emerald-700 rounded-md shadow-md hover:shadow-emerald-400/40 transition-all duration-300 font-semibold"
+              className="rounded-md bg-emerald-600 px-6 py-2.5 font-semibold text-white shadow-md transition-all duration-300 hover:bg-emerald-700 hover:shadow-emerald-400/40"
             >
               View Details
             </Link>

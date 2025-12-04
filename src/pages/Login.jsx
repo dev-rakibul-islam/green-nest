@@ -116,7 +116,10 @@ const Login = () => {
               </button>
             </div>
             <label className="label">
-              <Link to="/forgot" className="label-text-alt link link-hover">
+              <Link
+                to="/forgot"
+                className="label-text-alt link text-[#007C56] hover:text-[#007C56]/80"
+              >
                 Forgot password?
               </Link>
             </label>
@@ -124,7 +127,7 @@ const Login = () => {
 
           <button
             type="submit"
-            className="btn btn-primary w-full inline-flex items-center justify-center gap-2"
+            className="btn bg-[#007C56] text-white w-full inline-flex items-center justify-center gap-2"
           >
             <LogIn className="size-4" /> Login
           </button>
@@ -141,7 +144,10 @@ const Login = () => {
 
         <p className="text-sm mt-4 text-center">
           Don&apos;t have an account?{" "}
-          <Link to="/signup" className="link">
+          <Link
+            to="/signup"
+            className="link text-[#007C56] hover:text-[#007C56]/80"
+          >
             Sign up
           </Link>
         </p>

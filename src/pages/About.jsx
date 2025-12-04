@@ -2,12 +2,12 @@ import React from "react";
 import GlassCard from "../components/GlassCard";
 
 const About = () => (
-  <div className="relative mx-auto max-w-5xl px-4 py-10 mt-0">
+  <div className="relative mx-auto w-11/12 max-w-7xl px-4 py-10 mt-10">
     <div className="pointer-events-none absolute -top-24 -left-10 size-72 rounded-full bg-emerald-400/25 blur-3xl" />
     <div className="pointer-events-none absolute -bottom-16 -right-10 size-80 rounded-full bg-teal-400/20 blur-3xl" />
 
     <div className="mb-6 text-center">
-      <h1 className="text-3xl font-bold bg-clip-text text-transparent bg-linear-to-r from-emerald-400 via-teal-300 to-emerald-500">
+      <h1 className="text-3xl md:text-4xl font-bold text-[#007C56] tracking-tight">
         About GreenNest
       </h1>
       <p className="text-sm opacity-80 mt-1">
@@ -32,14 +32,14 @@ const About = () => (
           <div className="stats shadow bg-white/5 backdrop-blur-md">
             <div className="stat">
               <div className="stat-title">Active users</div>
-              <div className="stat-value">8K+</div>
+              <div className="stat-value text-[#007C56]">8K+</div>
               <div className="stat-desc">growing every week</div>
             </div>
           </div>
           <div className="stats shadow bg-white/5 backdrop-blur-md">
             <div className="stat">
               <div className="stat-title">Care guides</div>
-              <div className="stat-value">120+</div>
+              <div className="stat-value text-[#007C56]">120+</div>
               <div className="stat-desc">and counting</div>
             </div>
           </div>

@@ -16,9 +16,9 @@ const Privacy = () => (
     <GlassCard className="p-6 md:p-8">
       <div className="prose prose-invert max-w-none">
         <p>
-          We value your privacy. This demo application only uses Firebase
-          Authentication to manage sign-in and does not store personal data
-          beyond what Firebase maintains for authentication purposes.
+          We value your privacy. This application uses Firebase Authentication
+          to manage sign-in and does not store personal data beyond what
+          Firebase maintains for secure authentication.
         </p>
         <ul>
           <li>No third-party tracking pixels.</li>

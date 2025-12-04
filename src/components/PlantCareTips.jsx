@@ -14,10 +14,10 @@ import {
 function TipCard({ icon: Icon, title, children, tag }) {
   return (
     <article
-      className="group relative overflow-hidden rounded-2xl border border-white/15 bg-white/10 p-5 backdrop-blur-xl shadow-md hover:bg-white/15 transition-all duration-300"
+      className="group relative overflow-hidden rounded-2xl border border-white/15 bg-white/10 p-5 backdrop-blur-xl shadow-md transition-all duration-300 hover:bg-white/15"
       aria-label={title}
     >
-      <div className="absolute inset-0 pointer-events-none">
+      <div className="pointer-events-none absolute inset-0">
         <div className="absolute -top-24 -right-24 h-48 w-48 rounded-full bg-linear-to-br from-emerald-400/20 to-cyan-400/10 blur-3xl" />
       </div>
       <div className="flex items-start gap-3">
@@ -29,7 +29,7 @@ function TipCard({ icon: Icon, title, children, tag }) {
             {title}
           </h3>
           {tag ? (
-            <span className="inline-flex mt-1 items-center gap-1 rounded-full border border-white/15 bg-white/10 px-2 py-0.5 text-[11px] font-medium text-base-content/70">
+            <span className="mt-1 inline-flex items-center gap-1 rounded-full border border-white/15 bg-white/10 px-2 py-0.5 text-[11px] font-medium text-base-content/70">
               {tag}
             </span>
           ) : null}
@@ -44,9 +44,9 @@ function TipCard({ icon: Icon, title, children, tag }) {
 
 const PlantCareTips = () => {
   return (
-    <section className="relative mx-auto mb-12 max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="relative mx-auto mb-12 max-w-7xl">
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute left-1/2 top-0 -translate-x-1/2 h-64 w-[80%] rounded-[100%] bg-linear-to-r from-emerald-500/20 via-cyan-400/20 to-teal-500/20 blur-3xl" />
+        <div className="absolute left-1/2 top-0 h-64 w-[80%] -translate-x-1/2 rounded-[100%] bg-linear-to-r from-emerald-500/20 via-cyan-400/20 to-teal-500/20 blur-3xl" />
       </div>
 
       <header className="mb-8 text-center">
@@ -61,7 +61,7 @@ const PlantCareTips = () => {
         <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
           <Link
             to="/plants"
-            className="btn btn-primary btn-sm normal-case shadow-lg shadow-emerald-900/20"
+            className="btn bg-[#007C56] text-white btn-sm normal-case shadow-lg shadow-emerald-900/20"
           >
             Explore plants
           </Link>
@@ -75,16 +75,16 @@ const PlantCareTips = () => {
       </header>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         <TipCard icon={Droplets} title="Watering" tag="Weekly-ish">
-          <ul className="list-disc pl-4 space-y-1">
+          <ul className="list-disc space-y-1 pl-4">
             <li>
-              Water when top 2–3cm of soil is dry; don’t follow a rigid
+              Water when the top 2-3cm of soil is dry; don&apos;t follow a rigid
               schedule.
             </li>
             <li>
               Soak thoroughly until excess drains; empty saucers after 10
               minutes.
             </li>
-            <li>Reduce frequency 30–50% in winter when growth slows.</li>
+            <li>Reduce frequency 30-50% in winter when growth slows.</li>
           </ul>
           <p className="mt-2 text-xs text-white/70">
             Signs of overwatering: yellowing leaves, mushy stems, fungus gnats.
@@ -93,7 +93,7 @@ const PlantCareTips = () => {
         </TipCard>
 
         <TipCard icon={SunMedium} title="Light" tag="Bright indirect best">
-          <ul className="list-disc pl-4 space-y-1">
+          <ul className="list-disc space-y-1 pl-4">
             <li>
               Most houseplants prefer bright, indirect light near east/north
               windows.
@@ -105,10 +105,10 @@ const PlantCareTips = () => {
           </ul>
         </TipCard>
 
-        <TipCard icon={Wind} title="Humidity & Airflow" tag="40–60% RH">
-          <ul className="list-disc pl-4 space-y-1">
+        <TipCard icon={Wind} title="Humidity & Airflow" tag="40-60% RH">
+          <ul className="list-disc space-y-1 pl-4">
             <li>
-              Target 40–60% humidity; bathrooms and kitchens often read higher.
+              Target 40-60% humidity; bathrooms and kitchens often read higher.
             </li>
             <li>Prefer pebble trays or a humidifier over frequent misting.</li>
             <li>Ensure gentle airflow; avoid cold drafts and hot vents.</li>
@@ -116,16 +116,16 @@ const PlantCareTips = () => {
         </TipCard>
 
         <TipCard icon={Leaf} title="Soil & Repotting" tag="Well-draining">
-          <ul className="list-disc pl-4 space-y-1">
+          <ul className="list-disc space-y-1 pl-4">
             <li>Use airy mix: potting soil + perlite + bark for drainage.</li>
-            <li>Repot every 12–18 months or when roots circle the pot.</li>
-            <li>Choose a pot 2–5cm wider with drainage holes.</li>
+            <li>Repot every 12-18 months or when roots circle the pot.</li>
+            <li>Choose a pot 2-5cm wider with drainage holes.</li>
           </ul>
         </TipCard>
 
         <TipCard icon={FlaskConical} title="Fertilizer" tag="Growing season">
-          <ul className="list-disc pl-4 space-y-1">
-            <li>Feed monthly in spring/summer at 1/4–1/2 strength.</li>
+          <ul className="list-disc space-y-1 pl-4">
+            <li>Feed monthly in spring/summer at 1/4-1/2 strength.</li>
             <li>
               Skip feeding in winter; flush soil occasionally to remove salts.
             </li>
@@ -138,7 +138,7 @@ const PlantCareTips = () => {
           title="Pruning & Cleaning"
           tag="Healthy growth"
         >
-          <ul className="list-disc pl-4 space-y-1">
+          <ul className="list-disc space-y-1 pl-4">
             <li>Remove yellow or damaged leaves with sterilized shears.</li>
             <li>Wipe dust from leaves to boost photosynthesis.</li>
             <li>Pinch tips to encourage bushier growth on vining plants.</li>
@@ -146,7 +146,7 @@ const PlantCareTips = () => {
         </TipCard>
 
         <TipCard icon={Bug} title="Pests & Problems" tag="Early detection">
-          <ul className="list-disc pl-4 space-y-1">
+          <ul className="list-disc space-y-1 pl-4">
             <li>Common: spider mites, aphids, mealybugs, fungus gnats.</li>
             <li>
               Isolate affected plants; treat with neem or insecticidal soap.
@@ -161,15 +161,11 @@ const PlantCareTips = () => {
           </p>
         </TipCard>
 
-        <TipCard
-          icon={Thermometer}
-          title="Temperature"
-          tag="18–27°C sweet spot"
-        >
-          <ul className="list-disc pl-4 space-y-1">
-            <li>Keep steady temps; avoid sudden swings &gt;5°C in a day.</li>
+        <TipCard icon={Thermometer} title="Temperature" tag="18-27C sweet spot">
+          <ul className="list-disc space-y-1 pl-4">
+            <li>Keep steady temps; avoid sudden swings &gt;5C in a day.</li>
             <li>
-              Protect from cold windows in winter; move pots 10–20cm inward.
+              Protect from cold windows in winter; move pots 10-20cm inward.
             </li>
             <li>
               Watch for browning from heat stress near radiators or heaters.
@@ -177,8 +173,8 @@ const PlantCareTips = () => {
           </ul>
         </TipCard>
       </div>
-      <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3 bg-green-700/10 p-6 rounded-2xl">
-        <article className="rounded-2xl border border-white/15 bg-white p-5 backdrop-blur-xl text-base-content/90 drop-shadow-md">
+      <div className="mt-8 grid grid-cols-1 gap-4 rounded-2xl bg-green-700/10 p-6 md:grid-cols-3">
+        <article className="rounded-2xl border border-white/15 bg-white p-5 text-base-content/90 drop-shadow-md backdrop-blur-xl">
           <h4 className="font-semibold">Quick Care Schedule</h4>
           <div className="mt-3 flex flex-wrap gap-2 text-sm">
             <span className="badge badge-outline badge-sm">
@@ -191,18 +187,21 @@ const PlantCareTips = () => {
             <span className="badge badge-outline badge-sm">Rotate: weekly</span>
           </div>
         </article>
-        <article className="rounded-2xl border border-white/15 bg-white p-5 backdrop-blur-xl text-base-content/90 drop-shadow-md">
+        <article className="rounded-2xl border border-white/15 bg-white p-5 text-base-content/90 drop-shadow-md backdrop-blur-xl">
           <h4 className="font-semibold">Beginner Proof Picks</h4>
           <p className="mt-2 text-sm text-base-content/80">
             Try Snake Plant, ZZ Plant, or Pothos for low-effort success.
           </p>
-          <Link to="/plants" className="link link-primary text-sm">
-            Browse all →
+          <Link
+            to="/plants"
+            className="link text-[#007C56] hover:text-[#007C56]/80 text-sm"
+          >
+            Browse all -&gt;
           </Link>
         </article>
         <article
           id="care-faq"
-          className="rounded-2xl border border-white/15 bg-white p-5 backdrop-blur-xl text-base-content/90 drop-shadow-md"
+          className="rounded-2xl border border-white/15 bg-white p-5 text-base-content/90 drop-shadow-md backdrop-blur-xl"
         >
           <h4 className="font-semibold">FAQ</h4>
           <details className="mt-2">

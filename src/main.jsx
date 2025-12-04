@@ -6,6 +6,9 @@ import "./index.css";
 import { AuthProvider } from "./context/AuthProvider";
 import { Toaster } from "react-hot-toast";
 
+// Force light mode globally
+document.documentElement.setAttribute("data-theme", "light");
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <AuthProvider>

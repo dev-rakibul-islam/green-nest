@@ -14,12 +14,12 @@ const Contact = () => {
   };
 
   return (
-    <div className="relative mx-auto max-w-4xl px-4 py-10 mt-0">
+    <div className="relative mx-auto w-11/12 max-w-7xl px-4 py-10 mt-10">
       <div className="pointer-events-none absolute -top-24 -left-10 size-72 rounded-full bg-emerald-400/25 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-16 -right-10 size-80 rounded-full bg-teal-400/20 blur-3xl" />
 
       <div className="mb-6 text-center">
-        <h1 className="text-3xl font-bold bg-clip-text text-transparent bg-linear-to-r from-emerald-400 via-teal-300 to-emerald-500">
+        <h1 className="text-3xl md:text-4xl font-bold text-[#007C56] tracking-tight">
           Contact
         </h1>
         <p className="text-sm opacity-80 mt-1">
@@ -71,12 +71,12 @@ const Contact = () => {
             <p className="text-xs opacity-70">
               Or email us at support@greennest.example
             </p>
-            <button className="btn btn-primary">Send</button>
+            <button className="btn bg-[#007C56] text-white">Send</button>
           </div>
         </form>
         {sent && (
           <div className="alert alert-success/80 mt-4">
-            Thanks! Your message has been sent (demo).
+            Thanks! Your message has been sent. We will reach out shortly.
           </div>
         )}
       </GlassCard>

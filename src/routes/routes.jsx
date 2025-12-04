@@ -14,6 +14,7 @@ const ForgotPassword = lazy(() => import("../pages/ForgotPassword"));
 const About = lazy(() => import("../pages/About"));
 const Contact = lazy(() => import("../pages/Contact"));
 const Privacy = lazy(() => import("../pages/Privacy"));
+const Support = lazy(() => import("../pages/Support"));
 const NotFound = lazy(() => import("../pages/NotFound"));
 
 export const router = createBrowserRouter([
@@ -41,9 +42,7 @@ export const router = createBrowserRouter([
         path: "plants/:id",
         element: (
           <Suspense fallback={<Loader />}>
-            <ProtectedRoute>
-              <PlantDetails />
-            </ProtectedRoute>
+            <PlantDetails />
           </Suspense>
         ),
       },
@@ -102,6 +101,14 @@ export const router = createBrowserRouter([
         element: (
           <Suspense fallback={<Loader />}>
             <Privacy />
+          </Suspense>
+        ),
+      },
+      {
+        path: "support",
+        element: (
+          <Suspense fallback={<Loader />}>
+            <Support />
           </Suspense>
         ),
       },

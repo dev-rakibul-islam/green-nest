@@ -34,35 +34,45 @@ const NavBar = () => {
   }, []);
 
   const navLinkClass = ({ isActive }) =>
-    `transition-colors duration-200 ${
-      isActive ? "text-emerald-600 font-semibold" : "hover:text-emerald-500"
+    `transition-colors duration-200 font-medium pb-1 relative ${
+      isActive
+        ? "text-white font-bold after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-white"
+        : "text-white/80 hover:text-white"
     }`;
+
+  const navItems = [
+    { label: "Home", path: "/" },
+    { label: "All Items", path: "/plants" },
+    { label: "About", path: "/about" },
+    { label: "Contact", path: "/contact" },
+    { label: "Support", path: "/support" },
+  ];
 
   const NavLinks = (
     <>
-      <li>
-        <NavLink to="/" end className={navLinkClass} onClick={closeMobileMenu}>
-          Home
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="/plants"
-          className={navLinkClass}
-          onClick={closeMobileMenu}
-        >
-          Plants
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="/profile"
-          className={navLinkClass}
-          onClick={closeMobileMenu}
-        >
-          My Profile
-        </NavLink>
-      </li>
+      {navItems.map((item) => (
+        <li key={item.path}>
+          <NavLink
+            to={item.path}
+            end={item.path === "/"}
+            className={navLinkClass}
+            onClick={closeMobileMenu}
+          >
+            {item.label}
+          </NavLink>
+        </li>
+      ))}
+      {user && (
+        <li>
+          <NavLink
+            to="/profile"
+            className={navLinkClass}
+            onClick={closeMobileMenu}
+          >
+            My Profile
+          </NavLink>
+        </li>
+      )}
       <li className="md:hidden">
         {!user ? (
           <div className="flex gap-2">
@@ -124,8 +134,9 @@ const NavBar = () => {
   }, []);
 
   return (
-    <section className="bg-green-100 md:bg-green-700 p-0 md:p-2 backdrop-blur-sm sticky top-0 z-50 border-emerald-200 shadow-sm">
-      <div className="navbar md:bg-white px-0 py-0 md:px-4 font-medium w-11/12 md:w-10/12 mx-auto md:rounded-full md:shadow-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-linear-to-r from-emerald-700 via-emerald-600 to-teal-600 text-white shadow-lg">
+      <div className="safe-top" />
+      <div className="navbar mx-auto w-11/12 max-w-6xl px-0 py-0 md:px-4 font-medium">
         <div className="navbar-start">
           <button
             tabIndex={0}
@@ -144,7 +155,7 @@ const NavBar = () => {
           </button>
           <Link className="bg-transparent shadow-none border-0" to="/">
             <LazyImage
-              className="w-24 h-8 md:w-36 md:h-10 object-contain "
+              className="w-28 h-9 md:w-40 md:h-12 object-contain"
               src={logo}
               alt="GreenNest Logo"
               fetchPriority="low"
@@ -153,7 +164,7 @@ const NavBar = () => {
         </div>
 
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 gap-4 text-gray-700">
+          <ul className="menu menu-horizontal px-2 gap-6 text-sm">
             {NavLinks}
           </ul>
         </div>
@@ -164,10 +175,10 @@ const NavBar = () => {
               <NavLink
                 to="/login"
                 className={({ isActive }) =>
-                  `btn btn-sm rounded-full transition-all border ${
+                  `btn btn-sm rounded-full transition-all text-[#007C56] ${
                     isActive
-                      ? "bg-emerald-500 border-emerald-500 text-white"
-                      : "border-emerald-500 text-emerald-600 hover:bg-emerald-500 hover:text-white"
+                      ? "bg-[#007C56] text-emerald-600"
+                      : " hover:bg-white hover:text-emerald-600"
                   }`
                 }
               >
@@ -176,10 +187,10 @@ const NavBar = () => {
               <NavLink
                 to="/signup"
                 className={({ isActive }) =>
-                  `btn btn-sm rounded-full transition-all ${
+                  `btn btn-sm rounded-full transition-all border border-white/40 text-white ${
                     isActive
-                      ? "bg-emerald-700 text-white"
-                      : "bg-emerald-600 text-white hover:bg-emerald-700"
+                      ? "bg-white text-emerald-600"
+                      : "bg-emerald-500 hover:bg-white hover:text-emerald-600"
                   }`
                 }
               >
@@ -206,7 +217,7 @@ const NavBar = () => {
               </div>
               <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content mt-3 z-1 p-0 shadow bg-emerald-50 rounded-box w-64"
+                className="menu menu-sm dropdown-content mt-3 z-1 p-0 shadow bg-white text-slate-700 rounded-box w-64"
               >
                 <div className="px-4 py-3 border-b border-emerald-100 bg-linear-to-r from-emerald-600 to-emerald-500 rounded-t-box">
                   <p className="text-xs font-medium text-emerald-100 uppercase tracking-wider">
@@ -228,9 +239,9 @@ const NavBar = () => {
                 <li>
                   <Link
                     to="/profile"
-                    className="px-4 py-2.5 text-sm hover:bg-emerald-100"
+                    className="px-4 py-2.5 text-sm hover:bg-emerald-50"
                   >
-                    {user?.displayName}
+                    {user?.displayName || "My profile"}
                   </Link>
                 </li>
                 <li>
@@ -267,7 +278,7 @@ const NavBar = () => {
           <div
             id="mobile-menu"
             ref={mobileMenuRef}
-            className="absolute top-0 left-0 right-0 bg-white shadow-md rounded-b-2xl pt-16 pb-6 px-6"
+            className="absolute top-0 left-0 right-0 bg-emerald-900 text-white shadow-md rounded-b-3xl pt-16 pb-6 px-6"
           >
             <button
               className="btn btn-ghost btn-sm absolute right-2 top-2"
@@ -276,11 +287,11 @@ const NavBar = () => {
             >
               <X className="h-5 w-5" />
             </button>
-            <ul className="menu menu-lg gap-2 text-gray-700">{NavLinks}</ul>
+            <ul className="menu menu-lg gap-2 text-white/90">{NavLinks}</ul>
           </div>
         </div>
       )}
-    </section>
+    </header>
   );
 };
 
